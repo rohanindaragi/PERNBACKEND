@@ -46,6 +46,19 @@
     app.get("/",(req,res)=>{
         res.sendFile(__dirname +"/public/index.html");
     });
+### bodyParser
+#### step1.
+    use npm to install the body-parser module (npm i body-parser)
+#### step2. Import the body parser module
+    import bodyParser from "body-parser";
+#### step3. Mount the middleware using the express.use
+    app.use
+#### step4. Specify .urlencoded ({extended:true}) to create a body for URL-encoded requests like our form submission.
+    app.use(bodyParser.urlencoded({extended:true}));
+#### step5. Write a .post("/submit") handler where you console.log() the form contents when the user clicks on the submit button
+    app.post("/submit",(req,res)=>{
+        console.log(req.body);
+    });
 
 ## (listen) starting the server in the specified port     
     app.listen(3000,()=>{         
