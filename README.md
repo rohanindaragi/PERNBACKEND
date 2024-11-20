@@ -16,7 +16,28 @@
     app.get("/",(req,res)=>{         
         res.send("Hello, World! My name is rohan I am from bagalkot");     
     })  
+## different types of requests
+    app.get("/",(req,res)=>{
+        res.send("<h1>Hello</h1>");
+    })
+    
+    app.post("/register", (req,res)=>{
+        res.sendStatus(201);
+    })
+    
+    app.put("/user/rohan", (req,res)=>{
+        res.sendStatus(200);
+    })
+    
+    app.patch("/user/rohan", (req,res)=>{
+        res.sendStatus(200);
+    })
+    
+    app.delete("/user/angela", (req,res)=>{
+        res.sendStatus(200);
+    })
 ## (listen) starting the server in the specified port     
     app.listen(3000,()=>{         
         console.log(`Server is running on port ${3000}`);     
     })
+    
