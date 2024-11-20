@@ -1,5 +1,12 @@
 # PERNBACKEND
-
+# NPM
+## Initialise npm
+    npm init or npm init -y
+## To install any node package
+    npm i <something>
+## To run any file 
+    node <filename.extension>
+    use nodemon to save the time
 # Express.js  
 ## Import     
     import express from "express";  
