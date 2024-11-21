@@ -108,4 +108,47 @@
         console.log(`Listening on port ${port}`);
     })
 
+# EJS(Embedded Javascript)
+### Example 
+#### index.js 
+    import express from "express";
+    const app = express();
+    const port = 3000;
+
+    app.get("/", (req, res) => {
+        // it fetches the week
+      const today = new Date();
+      const day = today.getDay();
+      
+    //   applying conditions based on the week
+      let type = "a weekday";
+      let advice = "it's time to work hard";
     
+      if(day === 0 || day === 6){
+        type = "a weekend";
+        advice = "so take some refresh";
+      }
+      
+      res.render("index.ejs", {
+        dayType: type,
+        advice: advice,
+      });
+    });
+    
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+    });
+
+#### index.ejs
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weekday warrior</title>
+    </head>
+    <body>
+        <h1>Hey, it's <%= dayType %>, <%= advice %>!</h1>
+    </body>
+    </html>
+
